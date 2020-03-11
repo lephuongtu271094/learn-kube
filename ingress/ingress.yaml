@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  # namespace: ingress-controller
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    #traefik.ingress.kubernetes.io/redirect-entry-point: https
+    #traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  rules:
+    # Tên miền truy cập
+  - host: tu.test
+    http:
+      paths:
+      - path: /
+        backend:
+          # dịch vụ phục vụ tương ứng với tên miền và path
+          serviceName: hello
+          servicePort: 8080
+          # kubeless trigger http create hello --function-name hello --gateway nginx --path echo --hostname tu.test
+          # kubeless trigger http create hello --function-name hello --hostname tu.test

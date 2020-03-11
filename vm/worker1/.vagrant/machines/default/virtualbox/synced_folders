@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/tulp/Desktop/kube/vm/worker1","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
